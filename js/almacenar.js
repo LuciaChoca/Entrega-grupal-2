@@ -1,53 +1,54 @@
 
-const inputText = document.getElementById("inputText");
+const inputText = document.getElementById("item");
 const addButton = document.getElementById("agregar");
 const deleteButton = document.getElementById("limpiar");
 
 let array = [];
+let array2 = "";
+let array3 = [];
 
-/*function getData() {
-    
-    localStorage.getItem("text");
-    document.getElementById("contenedor").innerHTML += item.value;
-    console.log();
-  }
-  
-addButton.addEventListener("click", (evt) => {
-    
-    if (item.value) {
-      localStorage.setItem("text", item.value);
-    getData();
-  }
-});*/
-
-
-function getData() {
-    if (item.value) {
-        localStorage.setItem("text", item.value);
-    
-    localStorage.getItem("text");
-    document.getElementById("contenedor").innerHTML += '<div>' + item.value + '</div>';
-    console.log();
-  }}
-
-// Guardamos un valor cualquiera asociado a la clave example
-// (notar que siempre debe almacenarse en String)
-
-localStorage.setItem("example", "example value");
-
-/*function extrae(){
-  for (const element of strangeArray) {
-    if (typeof(element) === 'string'){
-      document.getElementById("list").innerHTML += '<li>' + element + '</li>';
-    }
-
-  }
+function textArray () {
+  array.push (item.value)
+}
+ 
+function almacenar () {
+localStorage.setItem('myArray', JSON.stringify(array));
 }
 
+function convertir () {
+  let array2= localStorage.getItem('myArray');
+  array3 = JSON.parse(array2);
+  }
 
-document.addEventListener("DOMContentLoaded", () => {
-  extrae();
+function traer () {
+  for (const element of array3) {
+    document.getElementById("contenedor").innerHTML += '<li>' + element + '</li>';
+  
+  } 
+  }
+  
+
+
+addButton.addEventListener("click", (evt) => {
+  textArray();
+  almacenar ();
+  convertir();
+  document.getElementById("contenedor").innerHTML= "" ;
+  traer();
+  
+
 });
-*/
+
+
+document.addEventListener("DOMContentLoaded",(evt) => {
+
+  convertir();
+  traer();
+  
+
+}); 
+
+
+
 
 
