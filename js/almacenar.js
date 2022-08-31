@@ -26,7 +26,7 @@ function getData() {
         localStorage.setItem("text", item.value);
     
     localStorage.getItem("text");
-    document.getElementById("contenedor").innerHTML += item.value;
+    document.getElementById("contenedor").innerHTML += '<div>' + item.value + '</div>';
     console.log();
   }}
 
@@ -34,5 +34,20 @@ function getData() {
 // (notar que siempre debe almacenarse en String)
 
 localStorage.setItem("example", "example value");
+
+/*function extrae(){
+  for (const element of strangeArray) {
+    if (typeof(element) === 'string'){
+      document.getElementById("list").innerHTML += '<li>' + element + '</li>';
+    }
+
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  extrae();
+});
+*/
 
 
