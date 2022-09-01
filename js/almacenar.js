@@ -4,8 +4,6 @@ const addButton = document.getElementById("agregar");
 const deleteButton = document.getElementById("limpiar");
 
 let array = [];
-let array2 = "";
-let array3 = [];
 
 function textArray () {
   array.push (item.value)
@@ -16,12 +14,11 @@ localStorage.setItem('myArray', JSON.stringify(array));
 }
 
 function convertir () {
-  let array2= localStorage.getItem('myArray');
-  array3 = JSON.parse(array2);
+  array= JSON.parse(localStorage.getItem('myArray'));
   }
 
 function traer () {
-  for (const element of array3) {
+  for (const element of array) {
     document.getElementById("contenedor").innerHTML += '<li>' + element + '</li>';
   
   } 
@@ -49,6 +46,9 @@ document.addEventListener("DOMContentLoaded",(evt) => {
 }); 
 
 
+
+
+//deleteButton.addEventListener("click", e )
 
 
 
